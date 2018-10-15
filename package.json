@@ -1,0 +1,43 @@
+{
+  "name": "easy-vuex",
+  "version": "1.0.0",
+  "description": "One plugin for using vuex more easily.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest test/**.test.js",
+    "build": "node build/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HalZhan/easy-vuex.git"
+  },
+  "keywords": [
+    "vuex",
+    "store",
+    "decorator"
+  ],
+  "author": "Hal Zhan",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HalZhan/easy-vuex/issues"
+  },
+  "homepage": "https://github.com/HalZhan/easy-vuex#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-decorators": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@types/jest": "^23.3.5",
+    "jest": "^23.6.0",
+    "rollup": "^0.66.6",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-clean": "^1.0.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0"
+  },
+  "dependencies": {
+    "vuex": "^3.0.1"
+  }
+}
