@@ -1,0 +1,2 @@
+import Vuex from 'vuex';
+
