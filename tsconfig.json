@@ -1,10 +1,24 @@
 {
     "compilerOptions": {
         "experimentalDecorators": true,
-        "allowJs": true
+        "lib": [
+            "es2015",
+            "es2016",
+            "es2017",
+            "es2018",
+            "dom",
+            "esnext"
+        ],
+        "moduleResolution": "node",
+        "target": "es5",
+        "outDir": "dist",
+        "allowJs": true,
+        "baseUrl": ".",
+
     },
     "include": [
+        "examples",
         "src",
-        "test"
+        "__tests__"
     ]
 }
