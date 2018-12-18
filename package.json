@@ -9,7 +9,11 @@
         "build": "node build/build.js",
         "docs:build": "vuepress build docs",
         "docs:dev": "vuepress dev docs",
-        "dev": "node build/dev.js"
+        "dev": "node build/dev.js",
+        "release": "standard-version",
+        "release:major": "standard-version -r major && git push --follow-tags origin master",
+        "release:minor": "standard-version -r minor && git push --follow-tags origin master",
+        "release:patch": "standard-version -r patch && git push --follow-tags origin master"
     },
     "repository": {
         "type": "git",
@@ -50,7 +54,6 @@
         "rollup-plugin-commonjs": "^9.2.0",
         "rollup-plugin-filesize": "^5.0.1",
         "rollup-plugin-node-resolve": "^4.0.0",
-        "rollup-plugin-progress": "^0.4.0",
         "rollup-plugin-replace": "^2.1.0",
         "rollup-plugin-uglify": "^6.0.0",
         "standard-version": "^4.4.0",

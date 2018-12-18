@@ -7,7 +7,6 @@ const nodeResolve = require("rollup-plugin-node-resolve");
 const babel = require("rollup-plugin-babel");
 const clean = require("rollup-plugin-clean");
 const aliasPlugin = require("rollup-plugin-alias");
-const progressPlugin = require("rollup-plugin-progress");
 const replacePlugin = require("rollup-plugin-replace");
 const uglifyPlugin = require("rollup-plugin-uglify");
 const sizePlugin = require("rollup-plugin-filesize");
@@ -46,7 +45,6 @@ const baseInputOptions = {
         aliasPlugin({
             src: root("src")
         }),
-        progressPlugin(),
         replacePlugin({
             VERSION: `"${pkgVersion}"`
         })

@@ -6,7 +6,8 @@ const { root } = require("./helpers");
 
 const compiler = webpack({
     entry: {
-        app: root("examples/es6-usage/index.js")
+        "decorator-usage": root("examples/decorator-usage/index.js"),
+        "function-usage": root("examples/function-usage/index.js")
     },
     output: {
         path: root("dist"),
@@ -59,7 +60,13 @@ const compiler = webpack({
     plugins: [
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
-            template: root("examples/es6-usage/index.html")
+            template: root("examples/decorator-usage/index.html"),
+            chunks: ["decorator-usage"]
+        }),
+        new HtmlWebpackPlugin({
+            template: root("examples/function-usage/index.html"),
+            filename: "function-usage.html",
+            chunks: ["function-usage"]
         }),
         new webpack.HotModuleReplacementPlugin({
             // Options...
