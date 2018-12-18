@@ -4,7 +4,7 @@ module.exports = {
     title: pkg.name,
     description: pkg.description,
     // head: [["link", { rel: "icon", href: "/static/img/uniqy.png" }]],
-    base: "/",
+    base: `/${pkg.name}/`,
     markdown: {
         config: md => {
             md.use(require("markdown-it-emoji"));
