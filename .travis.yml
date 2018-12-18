@@ -1,8 +1,8 @@
 language: node_js
 
 node_js:
-  - "iojs"
-  - "10"
+  - "node"
+  - "7"
 
 branches:
   only:
@@ -13,9 +13,13 @@ cache: npm
 install:
   - npm i
 
+script:
+  - echo "skipping test"
+
 jobs:
   include:
     - stage: docs release
+      node_js: "node"
       script:
         - bash scripts/deploy-docs.sh
       deploy:
