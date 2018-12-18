@@ -12,7 +12,7 @@ class AppStore {
 
 const appStore = new AppStore();
 
-export default Vue.component("app-decorator", {
+Vue.component("app-decorator", {
     computed: {
         counter() {
             return appStore.counter;

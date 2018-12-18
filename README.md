@@ -129,3 +129,17 @@ export {
 Then you can import the store in the place you want to use it like above.
 
 There are online examples you can take a look at.
+
+- [Function Usage](http://jsfiddle.net/mubsp2d3/)
+- [Decorator Usage](http://jsfiddle.net/wurLz9v3/)
+
+Enjoy using it and have fun :)
+
+## Documentations
+
+- [中文](http://halzhan.cn/kiss-vuex/zh/)
+- [en-US](http://halzhan.cn/kiss-vuex/)
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
