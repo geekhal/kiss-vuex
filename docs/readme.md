@@ -1,3 +1,3 @@
-# easy-vuex
+# kiss-vuex
 
-For using vuex more easily.
+One powerful library for using vuex more easily followed KISS principle.

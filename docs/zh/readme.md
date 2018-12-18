@@ -1,3 +1,3 @@
-# easy-vuex
+# kiss-vuex
 
-一种更简便的使用 `vuex` 的方式。
+遵循 `KISS` 原则的类库，一款以最简便的方式使用 `vuex` 的类库。
