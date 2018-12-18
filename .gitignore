@@ -64,3 +64,4 @@ typings/
 
 **/dist
 gh-pages
+docs/**/kiss-vuex.*

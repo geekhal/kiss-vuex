@@ -20,6 +20,7 @@ jobs:
     - stage: docs release
       node_js: "node"
       script:
+        - npm run build
         - bash scripts/deploy-docs.sh
       deploy:
         local-dir: gh-pages

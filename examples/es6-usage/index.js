@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { Store } from "easy-vuex";
+import { Store } from "kiss-vuex";
 
 @Store
 class AppStore {

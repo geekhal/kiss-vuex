@@ -57,7 +57,7 @@ const baseOutputOptions = {
     //...
     file: root(`${distDirName}/${pkgName}.js`),
     format: "umd",
-    name: "EasyVuex",
+    name: "KissVuex",
     globals: {},
     sourcemap: true,
     banner

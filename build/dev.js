@@ -20,7 +20,7 @@ const compiler = webpack({
             vue$: "vue/dist/vue.js",
             // 'uniqy$': root('dist/uniqy-core.esm.js'),
             // '@uniqy/core$': root('dist/uniqy-core.esm.js'),
-            "easy-vuex$": root("src/index.js")
+            "kiss-vuex$": root("src/index.js")
         },
         extensions: [".js", ".vue"]
     },

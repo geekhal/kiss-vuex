@@ -30,7 +30,7 @@ const STAUTS_LOG = {
 
 class Logger {
     constructor(options = {}) {
-        this.preffix = options.preffix || "[easy-vuex] ";
+        this.preffix = options.preffix || "[kiss-vuex] ";
     }
     error(str) {
         this.log(str, STAUTS_LOG.ERROR);
