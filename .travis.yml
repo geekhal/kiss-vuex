@@ -1,0 +1,28 @@
+language: node_js
+
+node_js:
+  - "iojs"
+  - "10"
+
+branches:
+  only:
+  - master
+
+cache: npm
+
+install:
+  - npm i
+
+jobs:
+  include:
+    - stage: docs release
+      script:
+        - bash scripts/deploy-docs.sh
+      deploy:
+        local-dir: gh-pages
+        provider: pages
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+        keep-history: true
+        on:
+          branch: master

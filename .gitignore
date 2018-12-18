@@ -63,5 +63,4 @@ typings/
 .DS_Store
 
 **/dist
-public
-!docs/.vuepress/public
+gh-pages

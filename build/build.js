@@ -19,6 +19,8 @@ const pkgVersion = pkg.version;
 const pkgAuthor = pkg.author;
 const pkgLicense = pkg.license;
 
+const ENCODING = "utf-8";
+
 const banner =
     "/*!\n" +
     ` * ${pkgName}.js v${pkgVersion}\n` +
@@ -143,28 +145,32 @@ async function buildOne(options = {}) {
 
     if (/\.min\.js/i.test(file)) {
         await new Promise((resolve, reject) => {
-            fs.readFile(file, { encoding: "utf-8", flag: "r" }, (err, data) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    data = Buffer.from(banner + "\n" + data);
-                    fs.writeFile(
-                        file,
-                        data,
-                        {
-                            encoding: "utf-8",
-                            flag: "w+"
-                        },
-                        err => {
-                            if (err) {
-                                reject(err);
-                            } else {
-                                resolve();
+            fs.readFile(
+                file,
+                { encoding: ENCODING, flag: "r" },
+                (err, data) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        data = Buffer.from(banner + "\n" + data);
+                        fs.writeFile(
+                            file,
+                            data,
+                            {
+                                encoding: ENCODING,
+                                flag: "w+"
+                            },
+                            err => {
+                                if (err) {
+                                    reject(err);
+                                } else {
+                                    resolve();
+                                }
                             }
-                        }
-                    );
+                        );
+                    }
                 }
-            });
+            );
         });
     }
 }
