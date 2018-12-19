@@ -5,10 +5,15 @@ module.exports = {
     ],
     presets: [
         [
-            "@babel/env",
+            "@babel/preset-env",
             {
                 modules: false
             }
         ]
-    ]
+    ],
+    env: {
+        test: {
+            plugins: [["@babel/plugin-transform-modules-commonjs"]]
+        }
+    }
 };

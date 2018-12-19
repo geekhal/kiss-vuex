@@ -1,15 +1,21 @@
 # kiss-vuex
 
 [![](https://api.travis-ci.org/HalZhan/kiss-vuex.svg?branch=master)](https://travis-ci.org/HalZhan/kiss-vuex)
-[![](https://img.shields.io/david/HalZhan/kiss-vuex.svg)](https://github.com/HalZhan/kiss-vuex)
-[![](https://img.shields.io/david/dev/HalZhan/kiss-vuex.svg)](https://github.com/HalZhan/kiss-vuex)
-[![](https://img.shields.io/github/license/HalZhan/kiss-vuex.svg)](https://github.com/HalZhan/kiss-vuex)
+[![](https://img.shields.io/bundlephobia/min/kiss-vuex.svg)](https://www.npmjs.com/package/kiss-vuex)
+[![](https://img.shields.io/npm/v/kiss-vuex.svg)](https://www.npmjs.com/package/kiss-vuex)
+[![](https://img.shields.io/github/license/halzhan/kiss-vuex.svg)](https://github.com/HalZhan/kiss-vuex/blob/master/LICENSE)
 
-One powerful library for using vuex more easily followed KISS principle.
+One powerful library for using vuex more easily followed KISS principle, fast and tiny!
+
+## Installation
+
+```bash
+$ npm i -S kiss-vuex
+```
 
 ## Introduction
 
-`kiss-vuex` support the easiest way to create vuex's store. It just exports one function named "Store" and you can use it like below:
+`kiss-vuex` supports the easiest way to create vuex's store. It just exports one function named "Store" and you can use it like below:
 
     - [@Store](#@Store)
     - [Store](Store)
@@ -38,7 +44,7 @@ export {
 }
 ```
 
-> Note: You have to add decorator plugins to your babel.config.js or set compilerOptions.experimentalDecorators "true" in the tsconfig.json file.
+> Note: You have to add plugins for supporting decorator usage to your babel.config.js or set compilerOptions.experimentalDecorators property true in the tsconfig.json file.
 >
 
 **Use with babel**
@@ -49,7 +55,7 @@ You have to install such below development dependencies firstly.
 $ npm i -D @babel/plugin-proposal-decorators @babel/plugin-proposal-class-properties
 ```
 
-Then add such plugins to the `.babelrc.js` or `.babelrc` file.
+Then add such plugins to the `.babelrc.js` , `.babelrc` or `babel.config.js` file.
 
 ```js
 module.exports = {
@@ -68,7 +74,21 @@ module.exports = {
 };
 ```
 
-Import the store in the place you want to use it.
+**Use with typescript**
+
+Set the property compilerOptions.experimentalDecorators true in the tsconfig.json file.
+
+```json
+{
+    "compilerOptions": {
+        // ...
+        "experimentalDecorators": true,
+        // ...
+    }
+}
+```
+
+Import the store in the place where you want to use it.
 
 ```js
 import { appStore } from './appStore'
@@ -126,9 +146,9 @@ export {
 }
 ```
 
-Then you can import the store in the place you want to use it like above.
+Then you can import the store in the place where you want to use it like above.
 
-There are online examples you can take a look at.
+There are online examples you can also take a look at.
 
 - [Function Usage](http://jsfiddle.net/mubsp2d3/)
 - [Decorator Usage](http://jsfiddle.net/wurLz9v3/)

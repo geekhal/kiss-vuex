@@ -3,14 +3,23 @@ import Vuex from "vuex";
 
 let vuexHasUsed = false;
 
+function __isKey__(path) {
+    return ["string", "number", "symbol", "bigint"].indexOf(typeof path) > -1;
+}
+
 function __normalizePath__(path) {
-    const finalPaths = [];
-    if (typeof path === "string") {
-        path = path.split(".");
+    let finalPaths = [];
+    if (__isKey__(path)) {
+        path = String(path)
+            .replace("[", ".")
+            .replace("]", ".")
+            .split(".");
     }
     if (Array.isArray(path) && path.length) {
         for (let p of path) {
-            if (p || p == 0) {
+            if (p.indexOf(".") > -1) {
+                finalPaths = finalPaths.concat(__normalizePath__(p));
+            } else if (p || p == "0") {
                 finalPaths.push(p);
             }
         }
@@ -19,6 +28,7 @@ function __normalizePath__(path) {
 }
 
 function __set__(object, path, value) {
+    const rawObj = object;
     if (object && typeof object === "object") {
         path = __normalizePath__(path);
         const length = path.length;
@@ -27,13 +37,12 @@ function __set__(object, path, value) {
                 object[path[i]] = value;
             } else if (typeof object[path[i]] === "object") {
                 object = object[path[i]];
-            } else if (object[path[i]] == null) {
-                object = object[path[i]] = {};
             } else {
-                break;
+                object = object[path[i]] = {};
             }
         }
     }
+    return rawObj;
 }
 
 function __get__(object, path) {
@@ -41,11 +50,13 @@ function __get__(object, path) {
     if (object && typeof object === "object") {
         path = __normalizePath__(path);
         const length = path.length;
-        for (let i = 0; i < length; i++) {
-            if (i >= length - 1) {
-                result = object[path[i]];
-            } else if (typeof object[path[i]] === "object") {
-                object = object[path[i]];
+        if (length) {
+            for (let i = 0; i < length; i++) {
+                if (i >= length - 1) {
+                    result = object[path[i]];
+                } else if (typeof object[path[i]] === "object") {
+                    object = object[path[i]];
+                }
             }
         }
     }
@@ -53,8 +64,8 @@ function __get__(object, path) {
 }
 
 function genCommitName(key) {
-    if (key && typeof key === "string") {
-        return "SETTER_" + key.toUpperCase();
+    if (__isKey__(key)) {
+        return "SETTER_" + String(key).toUpperCase();
     }
     return "";
 }
@@ -116,7 +127,7 @@ function makeStore(object) {
     for (let key of keys) {
         castReactive(key);
     }
-    return object;
+    return store;
 }
 
 function makeClassStore(targetClass) {
@@ -133,11 +144,13 @@ function makeClassStore(targetClass) {
     };
     Class.prototype = Object.create(targetClass.prototype);
     Class.prototype.constructor = targetClass.prototype.constructor;
+    Class.__VUE_STORE__ = store;
     return Class;
 }
 
 function makeObjectStore(options) {
-    return makeStore(options);
+    makeStore(options);
+    return options;
 }
 
 function Store(options = {}) {
@@ -151,5 +164,19 @@ function Store(options = {}) {
         return makeObjectStore(options);
     }
 }
+
+export {
+    __normalizePath__,
+    __set__,
+    __get__,
+    genCommitName,
+    getFromStore,
+    setToStore,
+    getFirstKey,
+    initVuexStore,
+    makeStore,
+    makeClassStore,
+    makeObjectStore
+};
 
 export default Store;
