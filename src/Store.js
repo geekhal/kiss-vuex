@@ -106,6 +106,9 @@ function makeStore(object) {
                     return getFromStore(store, key);
                 },
                 set(newVal) {
+                    if (typeof newVal === "object") {
+                        newVal = Object.assign({}, newVal);
+                    }
                     setToStore(store, key, newVal);
                 }
             });
