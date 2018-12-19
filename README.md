@@ -3,7 +3,7 @@
 [![](https://api.travis-ci.org/HalZhan/kiss-vuex.svg?branch=master)](https://travis-ci.org/HalZhan/kiss-vuex)
 [![](https://img.shields.io/bundlephobia/min/kiss-vuex.svg)](https://www.npmjs.com/package/kiss-vuex)
 [![](https://img.shields.io/npm/v/kiss-vuex.svg)](https://www.npmjs.com/package/kiss-vuex)
-[![](https://img.shields.io/codecov/c/github/halzhan/kiss-vuex.svg)](https://github.com/HalZhan/kiss-vuex)
+[![codecov](https://codecov.io/gh/HalZhan/kiss-vuex/branch/master/graph/badge.svg)](https://codecov.io/gh/HalZhan/kiss-vuex)
 [![](https://img.shields.io/github/license/halzhan/kiss-vuex.svg)](https://github.com/HalZhan/kiss-vuex/blob/master/LICENSE)
 
 One powerful library for using vuex more easily followed KISS principle, fast and tiny!
