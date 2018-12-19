@@ -2,7 +2,7 @@
   "name": "kiss-vuex",
   "version": "0.1.2",
   "description": "One powerful library for using vuex more easily followed KISS principle",
-  "descriptionZh": "vuex简易使用语法糖",
+  "descriptionZh": "vuex极简语法糖",
   "main": "dist/kiss-vuex.js",
   "module": "dist/kiss-vuex.esm.js",
   "scripts": {
