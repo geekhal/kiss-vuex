@@ -43,7 +43,13 @@ Vue.component("app-decorator", {
             appStore.counter++;
             appStore.timeStamps.push(date);
             appStore.info.counter++;
-            appStore.info[appStore.counter] = date.valueOf();
+            appStore.info =
+                Math.random() < 0.5
+                    ? Object.assign(appStore.info, {
+                          [appStore.counter]: date.valueOf()
+                      })
+                    : { counter: appStore.counter };
+            // appStore.info[appStore.counter] = date.valueOf();
         }
     }
 });
