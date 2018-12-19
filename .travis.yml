@@ -14,7 +14,8 @@ install:
   - npm i
 
 script:
-  - echo "skipping test"
+  - echo "Running test suites..."
+  - npm test
 
 jobs:
   include:
