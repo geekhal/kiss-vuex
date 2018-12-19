@@ -21,4 +21,5 @@ FILES_WILL_COPY=("$PKG_NAME.js","$PKG_NAME.min.js","$PKG_NAME.js.map","$PKG_NAME
 
 echo "Begin to build docs..."
 npm run docs:build -- -d $DOCS_DIST_DIR
-echo "Generated successfully!"
+echo "Generated successfully! The detail:"
+ls -R -g -h -A $DOCS_DIST_DIR
