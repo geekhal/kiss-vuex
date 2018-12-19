@@ -22,11 +22,15 @@ function _typeof(obj) {
 
 var vuexHasUsed = false;
 
+function __isKey__(path) {
+  return ["string", "number", "symbol", "bigint"].indexOf(_typeof(path)) > -1;
+}
+
 function __normalizePath__(path) {
   var finalPaths = [];
 
-  if (typeof path === "string") {
-    path = path.split(".");
+  if (__isKey__(path)) {
+    path = String(path).replace("[", ".").replace("]", ".").split(".");
   }
 
   if (Array.isArray(path) && path.length) {
@@ -38,7 +42,9 @@ function __normalizePath__(path) {
       for (var _iterator = path[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
         var p = _step.value;
 
-        if (p || p == 0) {
+        if (p.indexOf(".") > -1) {
+          finalPaths = finalPaths.concat(__normalizePath__(p));
+        } else if (p || p == "0") {
           finalPaths.push(p);
         }
       }
@@ -62,6 +68,8 @@ function __normalizePath__(path) {
 }
 
 function __set__(object, path, value) {
+  var rawObj = object;
+
   if (object && _typeof(object) === "object") {
     path = __normalizePath__(path);
     var length = path.length;
@@ -71,13 +79,13 @@ function __set__(object, path, value) {
         object[path[i]] = value;
       } else if (_typeof(object[path[i]]) === "object") {
         object = object[path[i]];
-      } else if (object[path[i]] == null) {
-        object = object[path[i]] = {};
       } else {
-        break;
+        object = object[path[i]] = {};
       }
     }
   }
+
+  return rawObj;
 }
 
 function __get__(object, path) {
@@ -87,11 +95,13 @@ function __get__(object, path) {
     path = __normalizePath__(path);
     var length = path.length;
 
-    for (var i = 0; i < length; i++) {
-      if (i >= length - 1) {
-        result = object[path[i]];
-      } else if (_typeof(object[path[i]]) === "object") {
-        object = object[path[i]];
+    if (length) {
+      for (var i = 0; i < length; i++) {
+        if (i >= length - 1) {
+          result = object[path[i]];
+        } else if (_typeof(object[path[i]]) === "object") {
+          object = object[path[i]];
+        }
       }
     }
   }
@@ -100,8 +110,8 @@ function __get__(object, path) {
 }
 
 function genCommitName(key) {
-  if (key && typeof key === "string") {
-    return "SETTER_" + key.toUpperCase();
+  if (__isKey__(key)) {
+    return "SETTER_" + String(key).toUpperCase();
   }
 
   return "";
@@ -191,6 +201,10 @@ function makeStore(object) {
         return getFromStore(store, key);
       },
       set: function set(newVal) {
+        if (_typeof(newVal) === "object") {
+          newVal = Object.assign({}, newVal);
+        }
+
         setToStore(store, key, newVal);
       }
     });
@@ -201,7 +215,7 @@ function makeStore(object) {
     castReactive(key);
   }
 
-  return object;
+  return store;
 }
 
 function makeClassStore(targetClass) {
@@ -219,11 +233,13 @@ function makeClassStore(targetClass) {
 
   Class.prototype = Object.create(targetClass.prototype);
   Class.prototype.constructor = targetClass.prototype.constructor;
+  Class.__VUE_STORE__ = store;
   return Class;
 }
 
 function makeObjectStore(options) {
-  return makeStore(options);
+  makeStore(options);
+  return options;
 }
 
 function Store() {
