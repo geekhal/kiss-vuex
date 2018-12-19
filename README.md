@@ -16,17 +16,17 @@ $ npm i -S kiss-vuex
 
 ## Introduction
 
-`kiss-vuex` supports the easiest way to create vuex's store. It just exports one function named "Store" and you can use it like below:
+`kiss-vuex` supports the easiest way to create vuex's store. It just exports one function named "Store" and you can use it like below: 
 
-    - [@Store](#@Store)
-    - [Store](Store)
+- [@Store](#@Store) 
+- [Store](#Store)
 
 ### @Store
 
 As a decorator, you just need to add it above the class statement.
 
 ```js
-import { Store } from 'kiss-vuex';
+import { Store } from "kiss-vuex";
 
 @Store
 class AppStore {
@@ -37,16 +37,12 @@ class AppStore {
     };
 }
 
-const appStore = new AppStore;
+const appStore = new AppStore();
 
-export {
-    AppStore,
-    appStore
-}
+export { AppStore, appStore };
 ```
 
 > Note: You have to add plugins for supporting decorator usage to your babel.config.js or set compilerOptions.experimentalDecorators property true in the tsconfig.json file.
->
 
 **Use with babel**
 
@@ -82,9 +78,7 @@ Set the property compilerOptions.experimentalDecorators true in the tsconfig.jso
 ```json
 {
     "compilerOptions": {
-        // ...
-        "experimentalDecorators": true,
-        // ...
+        "experimentalDecorators": true
     }
 }
 ```
@@ -92,8 +86,8 @@ Set the property compilerOptions.experimentalDecorators true in the tsconfig.jso
 Import the store in the place where you want to use it.
 
 ```js
-import { appStore } from './appStore'
-import Vue from 'vue';
+import { appStore } from "./appStore";
+import Vue from "vue";
 
 export default Vue.component("app-opr", {
     computed: {
@@ -151,15 +145,15 @@ Then you can import the store in the place where you want to use it like above.
 
 There are online examples you can also take a look at.
 
-- [Function Usage](http://jsfiddle.net/mubsp2d3/)
-- [Decorator Usage](http://jsfiddle.net/wurLz9v3/)
+-   [Function Usage](http://jsfiddle.net/mubsp2d3/)
+-   [Decorator Usage](http://jsfiddle.net/wurLz9v3/)
 
 Enjoy using it and have fun :)
 
 ## Documentations
 
-- [中文](http://halzhan.cn/kiss-vuex/zh/)
-- [en-US](http://halzhan.cn/kiss-vuex/)
+-   [中文](http://halzhan.cn/kiss-vuex/zh/)
+-   [en-US](http://halzhan.cn/kiss-vuex/)
 
 ## License
 
