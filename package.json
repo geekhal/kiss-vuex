@@ -18,6 +18,9 @@
         "release:minor": "standard-version -r minor && git push --follow-tags origin master",
         "release:patch": "standard-version -r patch && git push --follow-tags origin master"
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/HalZhan/kiss-vuex.git"

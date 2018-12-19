@@ -27,6 +27,7 @@ jobs:
         - npm test
         - npm run codecov
     - stage: release
+      if: branch = master
       script:
         - echo "Begin to release docs..."
         - npm run build
@@ -43,8 +44,10 @@ jobs:
       script:
         - echo "Begin releasing to NPM..."
         - npm run build
+      if: tag =~ ^v
       deploy:
         provider: npm
+        email: $NPM_EMAIL_ADDRESS
         api_key: $NPM_TOKEN
         on:
           tags: true
