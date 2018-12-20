@@ -1,6 +1,6 @@
 {
   "name": "kiss-vuex",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "One powerful library for using vuex more easily followed KISS principle",
   "descriptionZh": "vuex极简语法糖",
   "main": "dist/kiss-vuex.js",
