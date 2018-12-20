@@ -1,12 +1,13 @@
 # kiss-vuex
 
 [![](https://api.travis-ci.org/HalZhan/kiss-vuex.svg?branch=master)](https://travis-ci.org/HalZhan/kiss-vuex)
-[![](https://img.shields.io/bundlephobia/min/kiss-vuex.svg)](https://www.npmjs.com/package/kiss-vuex)
+[![](https://img.shields.io/github/languages/code-size/halzhan/kiss-vuex.svg)](https://www.npmjs.com/package/kiss-vuex)
 [![](https://img.shields.io/npm/v/kiss-vuex.svg)](https://www.npmjs.com/package/kiss-vuex)
 [![codecov](https://codecov.io/gh/HalZhan/kiss-vuex/branch/master/graph/badge.svg)](https://codecov.io/gh/HalZhan/kiss-vuex)
+[![](https://img.shields.io/npm/dm/kiss-vuex.svg)](https://www.npmjs.com/package/kiss-vuex)
 [![](https://img.shields.io/github/license/halzhan/kiss-vuex.svg)](https://github.com/HalZhan/kiss-vuex/blob/master/LICENSE)
 
-One powerful library for using vuex more easily followed KISS principle, fast and tiny!
+One powerful library for using vuex more easily followed KISS principle, fast and tiny, the minified js file is just 3KB (1KB Gzipped)!
 
 ## Installation
 
@@ -14,12 +15,14 @@ One powerful library for using vuex more easily followed KISS principle, fast an
 $ npm i -S kiss-vuex
 ```
 
-## Introduction
+> Please ensure that you have installed vue and vuex firstly, because kiss-vuex is dependent on them.
 
-`kiss-vuex` supports the easiest way to create vuex's store. It just exports one function named "Store" and you can use it like below: 
+## Usage
 
-- [@Store](#@Store) 
-- [Store](#Store)
+`kiss-vuex` supports the easiest way to create vuex's store. It just exports one function named "Store" and you can use it like below:
+
+-   [@Store](#@Store)
+-   [Store](#Store)
 
 ### @Store
 
@@ -44,7 +47,7 @@ export { AppStore, appStore };
 
 > Note: You have to add plugins for supporting decorator usage to your babel.config.js or set compilerOptions.experimentalDecorators property true in the tsconfig.json file.
 
-**Use with babel**
+#### Use with babel
 
 You have to install such below development dependencies firstly.
 
@@ -71,7 +74,7 @@ module.exports = {
 };
 ```
 
-**Use with typescript**
+#### Use with typescript
 
 Set the property compilerOptions.experimentalDecorators true in the tsconfig.json file.
 
