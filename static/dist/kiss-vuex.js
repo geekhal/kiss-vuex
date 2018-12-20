@@ -1,5 +1,5 @@
 /*!
- * kiss-vuex.js v0.1.2
+ * kiss-vuex.js v0.1.3
  * (c) 2018-2018 Hal Zhan
  * Released under the MIT License.
  */
