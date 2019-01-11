@@ -148,8 +148,8 @@ Then you can import the store in the place where you want to use it like above.
 
 There are online examples you can also take a look at.
 
--   [Function Usage](http://jsfiddle.net/mubsp2d3/)
--   [Decorator Usage](http://jsfiddle.net/wurLz9v3/)
+-   [Function Usage](http://jsfiddle.net/mubsp2d3/1/)
+-   [Decorator Usage](http://jsfiddle.net/wurLz9v3/1/)
 
 Enjoy using it and have fun :)
 

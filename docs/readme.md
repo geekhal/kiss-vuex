@@ -167,10 +167,10 @@ const appStore = Store({
 
 There are some online examples for you:
 
-- [use as function](http://jsfiddle.net/mubsp2d3/)
+- [use as function](https://jsfiddle.net/mubsp2d3/1/)
 
-<iframe width="100%" height="300" src="//jsfiddle.net/mubsp2d3/embedded/result,js,html/dark" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+<iframe width="100%" height="300" src="//jsfiddle.net/mubsp2d3/1/embedded/result,js,html/dark" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
-- [use as decorator](http://jsfiddle.net/wurLz9v3/)
+- [use as decorator](https://jsfiddle.net/wurLz9v3/1/)
 
-<iframe width="100%" height="300" src="//jsfiddle.net/wurLz9v3/embedded/result,js,html/dark" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+<iframe width="100%" height="300" src="//jsfiddle.net/wurLz9v3/1/embedded/result,js,html/dark" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>

@@ -172,10 +172,10 @@ const appStore = Store({
 
 这里有几个线上实例。
 
-- [作为普通函数使用](http://jsfiddle.net/mubsp2d3/)
+- [作为普通函数使用](http://jsfiddle.net/mubsp2d3/1/)
 
-<iframe width="100%" height="300" src="//jsfiddle.net/mubsp2d3/embedded/result,js,html/dark" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+<iframe width="100%" height="300" src="//jsfiddle.net/mubsp2d3/1/embedded/result,js,html/dark" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
-- [作为装饰器使用](http://jsfiddle.net/wurLz9v3/)
+- [作为装饰器使用](http://jsfiddle.net/wurLz9v3/1/)
 
-<iframe width="100%" height="300" src="//jsfiddle.net/wurLz9v3/embedded/result,js,html/dark" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+<iframe width="100%" height="300" src="//jsfiddle.net/wurLz9v3/1/embedded/result,js,html/dark" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
