@@ -1,6 +1,6 @@
 /*!
  * kiss-vuex.js v0.1.3
- * (c) 2018-2018 Hal Zhan
+ * (c) 2018-2019 Hal Zhan
  * Released under the MIT License.
  */
 import Vue from 'vue';
